@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from realtors.models import Realtor
 
 # Create your models here.
 # extending the core model
