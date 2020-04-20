@@ -7,7 +7,8 @@ from .models import Listing
 
 def index(request):
     # Fetch data from database
-    listings = Listing.objects.order_by('-list_date')
+    # only show when ispublish is T
+    listings = Listing.objects.order_by('-list_date').filter(is_published=True)
 
     paginator = Paginator(listings, 6)
     page = request.GET.get('page')
